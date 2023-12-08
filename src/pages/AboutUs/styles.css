@@ -1,0 +1,44 @@
+.custom-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+}
+
+.custom-dots li {
+  list-style-type: none;
+  margin: 8px 4px;
+  color: #000;
+  font-size: 12px;
+  text-align: center;
+  line-height: 16px;
+  width: 16px;
+  border-radius: 50%;
+
+}
+
+.custom-dots li.slick-active {
+  background: #44c5e5;
+  color: white;
+}
+
+.popover {
+  position: relative;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.arrow-up {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 6px; /* Giảm kích thước của mũi tên */
+  border-style: solid;
+  border-color: #ca2e2e transparent transparent transparent;
+  transform: translateX(-50%);
+}

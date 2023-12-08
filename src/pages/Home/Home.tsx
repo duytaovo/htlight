@@ -48,11 +48,6 @@ const Home = ({ title }: { title: string }) => {
       </Helmet>
       <main className={styles.main}>
         <BigBanner />
-
-        {/* <Ticket show={displayTicket} /> */}
-        {/* <Promo /> */}
-        <ProductCategory />
-
         <PromoFirst />
         <ProductOpTran />
         <ProductAmTranDowLigh />
@@ -60,6 +55,8 @@ const Home = ({ title }: { title: string }) => {
         <DenLedTuyp />
         <DenDuongLed />
         <DiscountOnline />
+        <ProductCategory />
+
         <ProductHistory styleTitle="uppercase text-textWhiteMain" />
       </main>
     </div>

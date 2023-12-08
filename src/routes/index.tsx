@@ -3,6 +3,7 @@ import Search from "src/pages/Search";
 import path from "src/constants/path";
 import KhongTimThay from "src/pages/KhongTimThay/NotFound";
 import PhuKien from "src/pages/PhuKien";
+import AboutUs from "src/pages/AboutUs";
 
 const CodeValidator = lazy(
   () => import("src/pages/Auth/ForgotPasword/ValidatorCode"),
@@ -40,6 +41,10 @@ export const routeMain = [
   {
     path: path.home,
     Component: Home,
+  },
+  {
+    path: path.intro,
+    Component: AboutUs,
   },
   {
     path: path.phone,

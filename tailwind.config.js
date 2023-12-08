@@ -27,11 +27,11 @@ module.exports = {
         "9/11": "88%",
       },
       backgroundImage: {
-        mainColor: "linear-gradient(70deg,#44c5e5,#276dc1)",
+        mainColor: "linear-gradient(70deg,#45FFCA,#00A9FF)",
         buyColor: "linear-gradient(70deg,#FF9209,#FF6C22)",
       },
       colors: {
-        mainColor: "#3699d3",
+        mainColor: "#45FFCA",
         textMainColor: "#ffffff",
         textCustom: "#ffffff99",
         textCustomBgWhite: "#727171",
@@ -40,7 +40,7 @@ module.exports = {
         textWhiteMain: "rgb(255 255 255 / 0.7)",
       },
       backgroundColor: {
-        mainBackGroundColor: "#1c2635",
+        mainBackGroundColor: "#45FFCA",
         bgHeaderMobile: "rgb(249 248 248 / 80%)",
       },
 
@@ -91,3 +91,4 @@ module.exports = {
     require("@tailwindcss/line-clamp"),
   ],
 };
+

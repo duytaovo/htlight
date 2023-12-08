@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import HeaderNav from "./HeaderNav";
 import CartButton from "./CartButton";
-import FilterButton from "./FilterButton";
 import styles from "./header.module.scss";
 import "./header.module.scss";
 import { Avatar, MenuProps } from "antd";
@@ -10,7 +9,7 @@ import path from "src/constants/path";
 import { useTranslation } from "react-i18next";
 import CustomDropDown from "../Dropdown/Dropdown";
 import { AppContext } from "src/contexts/app.context";
-import logo from "src/assets/images/htlight.png";
+import logo from "src/assets/images/htlight_new.png";
 import { clearLS } from "src/utils/auth";
 import { logoutUser } from "src/store/user/userSlice";
 import { useAppDispatch } from "src/hooks/useRedux";

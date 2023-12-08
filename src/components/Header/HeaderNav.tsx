@@ -9,7 +9,7 @@ import PolicyContent from "./PolicyContent";
 function HeaderNav() {
   const anchors = [
     { name: "Trang chủ", path: path.home, firstIcon: Home },
-    { name: "Giới thiệu", path: path.home, firstIcon: Intro },
+    { name: "Giới thiệu", path: path.intro, firstIcon: Intro },
     {
       name: "Sản phẩm",
       path: path.home,
