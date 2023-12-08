@@ -9,7 +9,7 @@ import path from "src/constants/path";
 import { useTranslation } from "react-i18next";
 import CustomDropDown from "../Dropdown/Dropdown";
 import { AppContext } from "src/contexts/app.context";
-import logo from "src/assets/images/htlight_new.png";
+import logo from "src/assets/images/HT MAX LIGHT.png";
 import { clearLS } from "src/utils/auth";
 import { logoutUser } from "src/store/user/userSlice";
 import { useAppDispatch } from "src/hooks/useRedux";

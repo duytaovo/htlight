@@ -42,7 +42,7 @@ const AboutUs = () => {
         <Banner />
       </WrapperContent>
 
-      <WrapperContent
+      {/* <WrapperContent
         title="WE'RE SCALING OUR OPERATIONS TO SCALE OUR MISSION."
         textAlign="center"
         isBgTransparent={true}
@@ -51,7 +51,7 @@ const AboutUs = () => {
           DataConnectedCarSharingHome={ConnectedCarSharingR}
           className={"flex-col items-stretch flex py-10 sm:py-3"}
         />
-      </WrapperContent>
+      </WrapperContent> */}
 
       {/* <div className="mb-[60px] sm:mb-[30px]">
         <div>
@@ -72,9 +72,9 @@ const AboutUs = () => {
         />
       </div> */}
 
-      <Blog />
+      {/* <Blog />
 
-      <JoinTeam />
+      <JoinTeam /> */}
 
       {/* <ExploreHosting
         img={ImgExploreAboutUs.img}
