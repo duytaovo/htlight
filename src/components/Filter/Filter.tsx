@@ -1,11 +1,10 @@
 import FilterItem from "./FilterItem";
 import { useRef } from "react";
 import FilterItemTotal from "./FilterItemTotal";
-import { DataPropsPhone } from "src/pages/Phone/FilterPhone";
 
 interface FilterItem {
   handle: (boolean: boolean) => void;
-  data: DataPropsPhone[];
+  data: any[];
 }
 
 const Filter = ({ handle, data }: FilterItem) => {
@@ -24,7 +23,7 @@ const Filter = ({ handle, data }: FilterItem) => {
         <FilterItemTotal data={data} handle={handle} scroll={scroll} />
 
         {/* Các nút sau */}
-        {data.map((src: DataPropsPhone) => (
+        {data.map((src: any) => (
           <FilterItem data={src} key={src.id} handle={handle} scroll={scroll} />
         ))}
       </div>

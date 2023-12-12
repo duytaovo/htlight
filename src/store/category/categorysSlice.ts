@@ -12,6 +12,30 @@ export const getDetailcategory = createAsyncThunk(
   payloadCreator(categoryService.getDetailcategory),
 );
 
+export const getCategorys = createAsyncThunk(
+  "category/getCategorys",
+  payloadCreator(categoryService.getcategorys),
+);
+
+export const getDetailCategory = createAsyncThunk(
+  "category/getDetailCategory",
+  payloadCreator(categoryService.getDetailcategory),
+);
+export const addCategory = createAsyncThunk(
+  "category/addCategory",
+  payloadCreator(categoryService.addCategory),
+);
+
+export const updateCategory = createAsyncThunk(
+  "category/updateCategory",
+  payloadCreator(categoryService.updateCategory),
+);
+
+export const deleteCategory = createAsyncThunk(
+  "category/deleteCategory",
+  payloadCreator(categoryService.deleteCategory),
+);
+
 const initialState = {
   category: [],
   categoryDetail: {},

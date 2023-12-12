@@ -16,7 +16,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import ggplay from "./ggPlay.jpeg";
 import appstore from "./appstore.png";
 import { Link } from "react-router-dom";
-import logo from "src/assets/images/htlight.png";
+import logo from "src/assets/images/HT MAX LIGHT.png";
 import ComponentFooter from "./ComponentFooter";
 
 type Props = {};
@@ -28,24 +28,12 @@ const FooterNew = (props: Props) => {
     <div className="p-10 px-40 bg-mainColor border-t-[1px]">
       <div className="flex items-start justify-between  ">
         <img src={logo} alt="logo" className="fill-current bg-none h-[36px]" />
-
-        {/* <CustomSelect
-          width="200px"
-          defaultValue="Pháp"
-          options={selectItems}
-          className="text-black border-none outline-none rounded-md h-10"
-        /> */}
       </div>
       <div className="mt-8 flex text-white/70 flex-grow justify-between flex-wrap">
         <div style={style} className="">
           <ComponentFooter header="Chính Sách" tabContent={firstColumn} />
         </div>
-        {/* <div style={style}>
-          <ComponentFooter header="Chia sẻ xe" tabContent={secondColumn} />
-        </div>
-        <div style={style}>
-          <ComponentFooter header="Cộng tác" tabContent={thirdColumn} />
-        </div> */}
+
         <div style={style}>
           <ComponentFooter header="Liên hệ" tabContent={fiveColumn} />
         </div>

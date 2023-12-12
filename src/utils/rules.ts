@@ -93,7 +93,7 @@ export const schemaAddUser = yup.object({
     .min(10, "Độ dài từ 10 chữ số")
     .matches(
       /(84|0[3|5|7|8|9])+([0-9]{8})\b/g,
-      "Số điện thoại không đúng định dạng"
+      "Số điện thoại không đúng định dạng",
     ),
   fullName: yup.string().required("Họ Tên là bắt buộc"),
   email: yup.string().required("Email là bắt buộc"),
@@ -110,7 +110,7 @@ export const schemaUpdateUser = yup.object({
     .min(10, "Độ dài từ 10 chữ số")
     .matches(
       /(84|0[3|5|7|8|9])+([0-9]{8})\b/g,
-      "Số điện thoại không đúng định dạng"
+      "Số điện thoại không đúng định dạng",
     ),
   fullName: yup.string(),
   email: yup.string(),
@@ -125,13 +125,43 @@ export const schemaForgot = yup.object({
     .min(10, "Độ dài từ 10 chữ số")
     .matches(
       /(84|0[3|5|7|8|9])+([0-9]{8})\b/g,
-      "Số điện thoại không đúng định dạng"
+      "Số điện thoại không đúng định dạng",
     ),
   newPassword: yup.string(),
   email: yup.string(),
   validatorCode: yup.string(),
 });
-
+export const schemaProductSmartPhone = yup.object({
+  brand: yup.string(),
+  category: yup.string(),
+  characteristic: yup.string(),
+  name: yup.string(),
+  description: yup.string(),
+  design: yup.string(),
+  dimension: yup.string(),
+  mass: yup.string(),
+  launchTime: yup.string(),
+  accessories: yup.string(),
+  productStatus: yup.number(),
+  ram: yup.string(),
+  storageCapacity: yup.string(),
+  color: yup.string(),
+  price: yup.string(),
+  salePrice: yup.string(),
+  monitor: yup.string(),
+  operatingSystem: yup.string(),
+  frontCamera: yup.string(),
+  rearCamera: yup.string(),
+  chip: yup.string(),
+  quantity: yup.string(),
+  depot: yup.string(),
+  sim: yup.string(),
+  battery: yup.string(),
+  charging: yup.string(),
+  networkSupport: yup.string(),
+  lstProductTypeAndPrice: yup.array(),
+  files: yup.array(),
+});
 export const userSchema = yup.object({
   name: yup.string().max(160, "Độ dài tối đa là 160 ký tự"),
   phone: yup.string().max(20, "Độ dài tối đa là 20 ký tự"),
@@ -158,3 +188,4 @@ export type UserSchema = yup.InferType<typeof schemaAddUser>;
 export type Schema = yup.InferType<typeof schema>;
 export type SchemaForGot = yup.InferType<typeof schemaForgot>;
 export type SchemaRegister = yup.InferType<typeof schemaAddUser>;
+

@@ -9,8 +9,8 @@ const images: string[] = [
   "https://rangdongs.com.vn/wp-content/uploads/2021/10/slide-so1-VN-18-6.jpg",
   "https://rangdongs.com.vn/wp-content/uploads/2021/10/2021.06.16-slide-2.jpg",
   "https://rangdongs.com.vn/wp-content/uploads/2021/10/RL-68.jpg",
-  // "https://htlightlevel.vn/wp-content/uploads/2023/11/snapedit_1700294979124.png",
-  "https://htlightlevel.vn/wp-content/uploads/2023/11/snapedit_1700294979124.png",
+  // "images/uploads/2023/11/snapedit_1700294979124.png",
+  "images/uploads/2023/11/snapedit_1700294979124.png",
 ];
 const BigBanner = () => {
   return (

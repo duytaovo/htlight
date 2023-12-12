@@ -37,7 +37,7 @@ export const AppProvider = ({
   defaultValue?: AppContextInterface;
 }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
-    defaultValue.isAuthenticated
+    defaultValue.isAuthenticated,
   );
   const [extendedPurchases, setExtendedPurchases] = useState<
     ExtendedPurchase[]
@@ -66,3 +66,4 @@ export const AppProvider = ({
     </AppContext.Provider>
   );
 };
+

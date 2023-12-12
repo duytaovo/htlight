@@ -1,8 +1,11 @@
 import Slider from "react-slick";
 import ProductCard from "src/components/ProductCard";
 import Section from "src/components/Section/Section";
+import Skeleton from "src/components/Skeleton";
 import NextArrow from "src/components/Slick/NextArrow";
 import PrevArrow from "src/components/Slick/PrevArrow";
+import { useAppSelector } from "src/hooks/useRedux";
+import ListProduct from "./components/ListProduct";
 interface Product {
   name: string;
   content: string;
@@ -17,8 +20,7 @@ const fakeData = [
     salePrice: 90000,
     star: 5,
     totalReview: 325,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/04/den-led-thuy-sinh.jpg",
+    image: "images/uploads/2020/04/den-led-thuy-sinh.jpg",
   },
   {
     id: 2,
@@ -27,8 +29,7 @@ const fakeData = [
     salePrice: 85000,
     star: 5,
     totalReview: 1325,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/04/den-led-thuy-sinh.jpg",
+    image: "images/uploads/2020/04/den-led-thuy-sinh.jpg",
   },
   {
     id: 3,
@@ -37,8 +38,7 @@ const fakeData = [
     salePrice: 80000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/04/den-led-thuy-sinh.jpg",
+    image: "images/uploads/2020/04/den-led-thuy-sinh.jpg",
   },
   {
     id: 4,
@@ -47,8 +47,7 @@ const fakeData = [
     salePrice: 140000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/04/bo-bong-tuyp-led-t8-200x240.jpg",
+    image: "images/uploads/2020/04/bo-bong-tuyp-led-t8-200x240.jpg",
   },
   {
     id: 5,
@@ -58,7 +57,7 @@ const fakeData = [
     star: 5,
     totalReview: 355,
     image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/04/bong-tuyp-led-t8-xanh-duong-xanh-la-do-hong-200x240.jpg",
+      "images/uploads/2020/04/bong-tuyp-led-t8-xanh-duong-xanh-la-do-hong-200x240.jpg",
   },
   {
     id: 6,
@@ -67,34 +66,49 @@ const fakeData = [
     salePrice: 180000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/01/op-tran-tron-24w.png",
+    image: "images/uploads/2020/01/op-tran-tron-24w.png",
   },
 ];
+
 const DenLedTuyp = () => {
+  const { value } = useAppSelector((state) => state.loading);
   return (
     <Section title="Đèn Led Tuyp" styles="bg-green-300 ">
       <>
         <div className="w-full  ">
-          <Slider
-            slidesToShow={5}
-            slidesToScroll={1}
-            nextArrow={<NextArrow />}
-            prevArrow={<PrevArrow />}
-          >
-            {fakeData?.map((product: any) => (
-              <div className="w-full" key={""}>
-                <div className="mx-4">
-                  <ProductCard
-                    docquyen
-                    key={product.id}
-                    category="ledAmTranDownLigh"
-                    product={product}
-                  />
-                </div>
+          <div className="mx-4">
+            {value < 100 ? (
+              <div style={{ display: "flex", gap: 20, paddingTop: 32 }}>
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
               </div>
-            ))}
-          </Slider>
+            ) : (
+              <ListProduct fakeData={fakeData} />
+            )}
+          </div>
         </div>
       </>
     </Section>

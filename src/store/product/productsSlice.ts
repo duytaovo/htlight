@@ -1,117 +1,111 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { productService } from "src/services";
+
 import { payloadCreator } from "src/utils/utils";
 
-export const getAllProductByCategory = createAsyncThunk(
-  "products/getAllProductByCategory",
-  payloadCreator(productService.getProductByCategory)
+export const getProduct = createAsyncThunk(
+  "product/getProduct",
+  payloadCreator(productService.getAllProducts),
 );
 
-// export const getLaptop = createAsyncThunk(
-//   "products/getLaptop",
-//   payloadCreator(productService.getLaptop)
-// );
-
-interface State {
-  allProducts: {
-    data: [];
-  };
-  oneProduct: {
-    data: string;
-  };
-  filter: {
-    data: [];
-  };
-  location: {
-    data: [];
-  };
-  productDetail: {
-    data: {
-      article: string[];
-      info: string[];
-      gallery: string[];
-      title: string[];
-      img: string;
-      rating: any;
-      id: number;
-    };
-  };
-  laptop: [];
-}
-
-const initialState: State = {
-  allProducts: {
-    data: [],
-  },
-  oneProduct: {
-    data: "",
-  },
-  filter: {
-    data: [],
-  },
-  location: {
-    data: [],
-  },
-  productDetail: {
-    data: {
-      article: [],
-      info: [],
-      gallery: [],
-      title: [],
-      img: "",
-      rating: [],
-      id: 0,
-    },
-  },
-  laptop: [],
+export const getDetailProduct = createAsyncThunk(
+  "product/getDetailProduct",
+  payloadCreator(productService.getProduct),
+);
+const data = {
+  data: [],
+  pageNumber: 0,
+  pageSize: 10,
+  totalElements: 1,
+  totalPages: 1,
 };
 
-export const products = createSlice({
-  name: "products",
-  initialState: initialState,
+export type product = {
+  data: any[];
+  pageNumber: number;
+  pageSize: number;
+  totalElements: number;
+  totalPages: number;
+};
+
+const dataDetail = {
+  id: 3,
+  monitor: "",
+  operatingSystem: "",
+  rearCamera: "",
+  frontCamera: "",
+  chip: "",
+  sim: " ",
+  battery: "",
+  charging: "",
+  networkSupport: "",
+  productInfo: {
+    brandId: 1,
+    categoryId: 1,
+    productId: 10,
+    characteristicId: 7,
+    productCode: "",
+    name: "",
+    description: "",
+    design: " ",
+    dimension: "",
+    mass: 221.0,
+    launchTime: 2023,
+    accessories: "Tai nghe, sạc",
+    productStatus: 100,
+    lstProductTypeAndPrice: [
+      {
+        typeId: 5,
+        ram: " ",
+        storageCapacity: "",
+        color: "",
+        price: 0,
+        salePrice: 0,
+        quantity: 1000,
+        depotId: 1,
+      },
+      {
+        typeId: 6,
+        ram: " ",
+        storageCapacity: "",
+        color: "",
+        price: 0,
+        salePrice: 0,
+        quantity: 0,
+        depotId: 1,
+      },
+    ],
+    lstProductImageUrl: [],
+    star: 4.9,
+    totalReview: 100,
+    slug: "",
+  },
+};
+
+const initialState = {
+  products: data,
+  productDetail: dataDetail,
+  filter: data,
+};
+
+const productSlice = createSlice({
+  name: "product",
+  initialState,
   reducers: {
-    // getAllProducts: (state, action) => {
-    //   state.allProducts.data = action.payload;
-    // },
-    updateAllProduct: (state, action) => {
-      state.allProducts.data = action.payload;
-    },
-    getOneProduct: (state, action) => {
-      state.oneProduct.data = action.payload;
-    },
     handleFilterStore: (state, action) => {
       state.filter.data = action.payload;
     },
-    getLocationProduct: (state, action) => {
-      state.location.data = action.payload;
-    },
-    getProductDetail: (state, action) => {
-      state.productDetail.data = action.payload;
-    },
-    updateDiscussRating: (state, action) => {
-      const rating: any = state.productDetail.data.rating.find(
-        (rating: any) => rating.id === action.payload.idRating
-      );
-      if (rating) {
-        const res = rating.discuss.push(action.payload);
-      }
-    },
   },
   extraReducers: (builder) => {
-    builder.addCase(getAllProductByCategory.fulfilled, (state, action) => {
-      state.allProducts.data = action.payload.data;
+    builder.addCase(getProduct.fulfilled, (state, { payload }) => {
+      state.products = payload.data;
+    });
+    builder.addCase(getDetailProduct.fulfilled, (state, { payload }) => {
+      state.productDetail = payload.data.data;
     });
   },
 });
-export const {
-  updateDiscussRating,
-  // getAllProducts,
-  getOneProduct,
-  handleFilterStore,
-  getLocationProduct,
-  getProductDetail,
-  updateAllProduct,
-} = products.actions;
+export const { handleFilterStore } = productSlice.actions;
+const productReducer = productSlice.reducer;
+export default productReducer;
 
-const productsReducer = products.reducer;
-export default productsReducer;

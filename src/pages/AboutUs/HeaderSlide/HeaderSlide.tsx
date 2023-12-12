@@ -10,8 +10,7 @@ export const DataHeaderAboutUs = [
     content:
       "Đèn LED Max Light được kiểm tra chặt chẽ bởi hệ thống quản lý ISO 9001:2015. Với thế mạnh dây chuyền hiện đại, sản phẩm HT Max Light được các nhà thiết kế, nhà thầu và người tiêu dùng tin tưởng lựa chọn.",
     arrayImg: [
-      "https://htlightlevel.vn/wp-content/uploads/elementor/thumbs/472d6ce3ce55edcd651451f905ff8f24-qfj7wzlydqe9cw7cyjurphpotyz6rl3b49pgmft2fc.jpg",
-      "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6390f3788372d0e324dafc8f_bloomberglogo.svg",
+      "images/uploads/elementor/thumbs/472d6ce3ce55edcd651451f905ff8f24-qfj7wzlydqe9cw7cyjurphpotyz6rl3b49pgmft2fc.jpg",
       "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6390f378c864d13f8763bda2_forbes-logo.svg",
       "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6390f268577eec6e9601550e_techcrunch%20logo.png",
       "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/6390f265fdc36f271a970fa2_newyorktimeslogo.png",
@@ -27,7 +26,7 @@ const HeaderSlide = () => {
         <div
           className="w-full  bg-scroll rounded h-[400px] flex-col justify-end items-center p-9 flex"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 60%, #000 88%), url("https://htlightlevel.vn/wp-content/uploads/2023/11/snapedit_1700294979124.png")`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 60%, #000 88%), url("images/uploads/2023/11/snapedit_1700294979124.png")`,
             gridRowGap: "40px",
             backgroundPosition: "0 0,50% 71%",
             backgroundSize: "auto, auto 135%",
@@ -41,7 +40,7 @@ const HeaderSlide = () => {
           <span className="text-white font-normal max-w-[82ch]">
             {DataHeaderAboutUs?.[0]?.content}
           </span>
-          <div
+          {/* <div
             className="w-full max-w-[1080px] bg-white rounded-2xl justify-between items-end  mb-[-120px] p-[32px_60px] sm:p-[10px_20px]"
             style={{
               gridColumnGap: "26px",
@@ -60,7 +59,7 @@ const HeaderSlide = () => {
                 alt=""
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

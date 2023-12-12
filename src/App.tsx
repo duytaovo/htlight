@@ -9,6 +9,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { useContext } from "react";
 import { AppContext } from "./contexts/app.context";
+import { SwitchMode } from "./components/SwitchMode";
 
 const theme = createTheme({
   direction: "rtl",
@@ -30,6 +31,14 @@ function App() {
       <HelmetProvider>
         <ErrorBoundary>{routeElements}</ErrorBoundary>
         <ToastContainer />
+        <SwitchMode styleClass="" telephone />
+        <div className="flex items-center justify-between">
+          <SwitchMode styleClass="bottom-32" />
+          <span className="transition-all text-lg w-[90px] font-bold bg-red-500 px-4 py-2 text-white flex fixed bottom-12 left-24 z-[999999999999999] rounded-full cursor-pointer hover:scale-110 active:scale-100">
+            090 668 8130
+          </span>
+        </div>
+        <SwitchMode styleClass="right" telephone />
       </HelmetProvider>
     </ThemeProvider>
   );

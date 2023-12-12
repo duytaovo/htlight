@@ -1,14 +1,5 @@
 import React from "react";
 
-export const DataBannerAboutUs = {
-  id: "Banner_AboutUs_AboutUS",
-  headerTitle: "OUR MISSION",
-  title:
-    "We're helping consumers shift away from car ownership by giving them instant and convenient access to vehicles when they need them.",
-  content:
-    "Our peer-to-peer marketplace helps solve some of the most pressing challenges facing the world today, including environmental sustainability and access to economic opportunity.",
-  img: "https://assets-global.website-files.com/5c16e90c8f6920b098f834e5/63ec0b73b2f4fb34b18ddb8a_ga-illustration-8.svg",
-};
 const Banner = () => {
   return (
     <div className="flex justify-center sm:flex-col sm:px-3">
@@ -22,6 +13,13 @@ const Banner = () => {
             Công Ty TNHH Thương Mại Sản Xuất CCG được thành lập vào ngày
             19/04/2016, kênh phân phối khắp khu vực TP.HCM và các tỉnh thành với
             hơn 500 đại lý và nhà phân phối.
+          </h2>
+          <h2 className="mt-3 text-2xl sm:text-[15px] text-black sm:font-semibold">
+            Sứ mệnh Cung cấp các sản phẩm, dịch vụ, hệ thống & giải pháp chiếu
+            sáng xanh tiết kiệm năng lượng, thân thiện môi tường, bảo vệ sức
+            khỏe và hạnh phúc con người, nâng cao chất lượng cuộc sống và gia
+            tăng giá trị cho cổ đông, nhân viên và khách hàng. Tận tâm phụng sự
+            khách hàng.
           </h2>
 
           <p className="text-[#808795] font-normal mt-3 sm:text-[12px]">
@@ -37,7 +35,7 @@ const Banner = () => {
       <div className="w-[30%] flex justify-center sm:w-full">
         <img
           className="object-contain rounded-full sm:h-[300px]"
-          src="https://htlightlevel.vn/wp-content/uploads/elementor/thumbs/472d6ce3ce55edcd651451f905ff8f24-qfj7wzlydqe9cw7cyjurphpotyz6rl3b49pgmft2fc.jpg"
+          src="images/uploads/elementor/thumbs/472d6ce3ce55edcd651451f905ff8f24-qfj7wzlydqe9cw7cyjurphpotyz6rl3b49pgmft2fc.jpg"
           alt="ss"
         />
       </div>{" "}

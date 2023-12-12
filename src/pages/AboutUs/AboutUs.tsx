@@ -1,32 +1,31 @@
 import React from "react";
 import HeaderSlide from "src/pages/AboutUs/HeaderSlide/HeaderSlide";
 import WrapperContent from "src/components/WrapperContent/WrapperContent";
-import ConnectedCarSharing from "src/components/ConnectedCarSharing/ConnectedCarSharing";
-import JoinTeam from "./JoinTeam/JoinTeam";
 import Banner from "./Banner/Banner";
 import { Helmet } from "react-helmet-async";
-import Blog from "src/components/Blog/Blog";
+import ConnectedCarSharing from "src/components/ConnectedCarSharing/ConnectedCarSharing";
+import Banner2 from "./Banner2/Banner2";
 
 const ConnectedCarSharingR = [
   {
     id: 1,
     total: 1,
-    title: "abc",
+    title: "Sáng Tạo",
   },
   {
     id: 2,
-    total: 1,
-    title: "abc",
+    total: 2,
+    title: "Hiệu Quả",
   },
   {
     id: 3,
-    total: 1,
-    title: "abc",
+    total: 3,
+    title: "Thông Minh",
   },
   {
     id: 4,
-    total: 1,
-    title: "abc",
+    total: 4,
+    title: "Sang Trọng",
   },
 ];
 
@@ -34,7 +33,7 @@ const AboutUs = () => {
   return (
     <div className="w-full h-auto">
       <Helmet>
-        <title>About Us </title>
+        <title>Giới thiệu </title>
         <meta name="description" content="Trang về chúng tôi" />
       </Helmet>
       <HeaderSlide />
@@ -42,8 +41,8 @@ const AboutUs = () => {
         <Banner />
       </WrapperContent>
 
-      {/* <WrapperContent
-        title="WE'RE SCALING OUR OPERATIONS TO SCALE OUR MISSION."
+      <WrapperContent
+        title="Tiêu chí của chúng tôi mang đến"
         textAlign="center"
         isBgTransparent={true}
       >
@@ -51,8 +50,10 @@ const AboutUs = () => {
           DataConnectedCarSharingHome={ConnectedCarSharingR}
           className={"flex-col items-stretch flex py-10 sm:py-3"}
         />
-      </WrapperContent> */}
-
+      </WrapperContent>
+      <WrapperContent textAlign="center" title="" classname="flex flex-col">
+        <Banner2 />
+      </WrapperContent>
       {/* <div className="mb-[60px] sm:mb-[30px]">
         <div>
           <span className="text-mainColor font-medium text-center uppercase leading-3 flex justify-center mb-2">
@@ -75,14 +76,6 @@ const AboutUs = () => {
       {/* <Blog />
 
       <JoinTeam /> */}
-
-      {/* <ExploreHosting
-        img={ImgExploreAboutUs.img}
-        DataExploreHostingStyle={DataExploreHostingAboutUs}
-        DataExploreHostingText={ExploreAboutUs}
-        isEx={false}
-        className="flex-col items-center flex w-full mb-[66px]"
-      /> */}
     </div>
   );
 };

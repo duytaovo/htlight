@@ -26,7 +26,7 @@ const Blog = () => {
     <div className="flex p-40 justify-center h-auto w-full mb-16 md:mb-24 sm:flex-col sm:mb-20">
       <img
         className="object-contain rounded-2xl w-1/2 flex justify-center mr-5 md:rounded-2xl sm:w-full"
-        src="https://htlightlevel.vn/wp-content/uploads/2023/11/den-led-san-vuon.jpg"
+        src="images/uploads/2023/11/den-led-san-vuon.jpg"
         alt="ss"
       />
 

@@ -27,85 +27,85 @@ export const selectItems: any[] = [
 
 export const firstColumn = [
   {
-    link: "/solution/insurance",
+    link: "/",
     content: "Chính sách chung",
   },
   {
-    link: "/our-solution/safety-trust",
+    link: "/",
     content: "Chính sách mua hàng",
   },
   {
-    link: "/our-solution/technology",
+    link: "/",
     content: "Chính sách đổi trả",
   },
   {
-    link: "/our-solution/technology",
+    link: "/",
     content: "Chính sách bảo hành",
   },
   {
-    link: "/our-solution/technology",
+    link: "/",
     content: "Chính sách giao nhận",
   },
 ];
 
 export const secondColumn = [
   {
-    link: "/carshare/share-a-car",
+    link: "/",
     content: "Chia sẻ xe",
   },
   {
-    link: "/carshare/term-condition",
+    link: "/",
     content: "Điều khoản và điều kiện",
   },
   {
-    link: "/carshare/benefits",
+    link: "/",
     content: "Chia sẻ lợi ích",
   },
   {
-    link: "/carshare/referral",
+    link: "/",
     content: "Giới thiệu xe",
   },
 ];
 export const thirdColumn = [
   {
-    link: "/partners/partner-with-us",
+    link: "/",
     content: "Cộng tác với chúng tôi",
   },
   {
-    link: "/partners/our-partners",
+    link: "/",
     content: "Đối tác của chúng tôi",
   },
   {
-    link: "/partners/grab-be-drivers",
+    link: "/",
     content: "Lái xe với grab/be",
   },
 ];
 export const fourColumn = [
   {
-    link: "/about-us/unlock-team",
+    link: "/",
     content: "Đội ngũ GreenBlue",
   },
   {
-    link: "/about-us/contact-us",
+    link: "/",
     content: "Kết nối với chúng tôi",
   },
   {
-    link: "/about-us/move-to-server",
+    link: "/",
     content: "",
   },
 ];
 
 export const fiveColumn = [
   {
-    link: "/newsroom/news",
+    link: "/",
     content: "206/7B Bình Quới, P.28, Q. Bình Thạnh, TP Hồ Chí Minh",
   },
   {
-    link: "/newsroom/blogs",
+    link: "/",
     content: "Hotline: 0936 937 130",
   },
   {
-    link: "/newsroom/policy",
+    link: "/",
     content: "Email: info@htmaxlight.vn",
   },
 ];

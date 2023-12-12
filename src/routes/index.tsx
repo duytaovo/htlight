@@ -1,9 +1,10 @@
 import { lazy } from "react";
 import Search from "src/pages/Search";
-import path from "src/constants/path";
+import path, { pathAdmin } from "src/constants/path";
 import KhongTimThay from "src/pages/KhongTimThay/NotFound";
 import PhuKien from "src/pages/PhuKien";
 import AboutUs from "src/pages/AboutUs";
+import HomeAdmin from "src/pages/Admin/home/Home";
 
 const CodeValidator = lazy(
   () => import("src/pages/Auth/ForgotPasword/ValidatorCode"),
@@ -15,18 +16,7 @@ const CodeValidatorActiveAccount = lazy(
 );
 const ActiveAccount = lazy(() => import("src/pages/Auth/AcctiveAccount"));
 const ForgotPassword = lazy(() => import("src/pages/Auth/ForgotPasword"));
-const Accessory = lazy(() => import("src/pages/Accessory/Accessory"));
-const History = lazy(() => import("src/pages/History/History"));
-const LapTop = lazy(() => import("src/pages/Laptop/LapTop"));
-const Maycu = lazy(() => import("src/pages/Maycu/Maycu"));
-const Phone = lazy(() => import("src/pages/Phone/Phone"));
-const ProductDetail = lazy(
-  () => import("src/pages/ProductDetail/SmartPhoneDetail"),
-);
-const Samsung = lazy(() => import("src/pages/Samsung/Samsung"));
-const SmartWatch = lazy(() => import("src/pages/Smartwatch/SmartWatch"));
-const Tablet = lazy(() => import("src/pages/Tablet/Tablet"));
-const Pc = lazy(() => import("src/pages/Pc/Pc"));
+const ProductDetail = lazy(() => import("src/pages/ProductDetail/LedDetail"));
 
 const Login = lazy(() => import("src/pages/Auth/Login"));
 const Register = lazy(() => import("src/pages/Auth/Register"));
@@ -46,39 +36,7 @@ export const routeMain = [
     path: path.intro,
     Component: AboutUs,
   },
-  {
-    path: path.phone,
-    Component: Phone,
-  },
-  {
-    path: path.laptop,
-    Component: LapTop,
-  },
-  {
-    path: path.tablet,
-    Component: Tablet,
-  },
-  {
-    path: path.smartwatch,
-    Component: SmartWatch,
-  },
-  {
-    path: path.maycu,
-    Component: Maycu,
-  },
-  {
-    path: path.accessory,
-    Component: Accessory,
-  },
 
-  {
-    path: path.samsung,
-    Component: Samsung,
-  },
-  {
-    path: path.pc,
-    Component: Pc,
-  },
   {
     path: path.search,
     Component: Search,
@@ -165,10 +123,6 @@ export const routeAuth = [
     path: path.sendCode,
     Component: CodeValidator,
   },
-  // {
-  //   path: path.profile,
-  //   Component: ProfileNew,
-  // },
 ];
 
 export const routeUser = [
@@ -189,14 +143,22 @@ export const routeUser = [
     path: path.sendCodeActive,
     Component: CodeValidatorActiveAccount,
   },
-  // {
-  //   path: path.changePassword,
-  //   Component: ChangePassword,
-  // },
 
   {
     path: path.historyPurchase,
     Component: History,
+  },
+];
+
+export const routeMainAdmin = [
+  {
+    path: pathAdmin.home,
+    Component: HomeAdmin,
+  },
+
+  {
+    path: pathAdmin.products,
+    // Component: TableProduct,
   },
 ];
 

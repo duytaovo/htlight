@@ -18,8 +18,7 @@ const fakeData = [
     salePrice: 925000,
     star: 5,
     totalReview: 325,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/01/den-led-op-tran-24W-vuong-vien-den.jpg",
+    image: "images/uploads/2020/01/den-led-op-tran-24W-vuong-vien-den.jpg",
   },
   {
     id: 2,
@@ -28,8 +27,7 @@ const fakeData = [
     salePrice: 900000,
     star: 5,
     totalReview: 1325,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/01/op-tran-tron-24w.png",
+    image: "images/uploads/2020/01/op-tran-tron-24w.png",
   },
   {
     id: 3,
@@ -38,8 +36,7 @@ const fakeData = [
     salePrice: 425000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/01/den-led-op-tran-24W-vuong-vien-den.jpg",
+    image: "images/uploads/2020/01/den-led-op-tran-24W-vuong-vien-den.jpg",
   },
   {
     id: 4,
@@ -48,8 +45,7 @@ const fakeData = [
     salePrice: 525000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/01/op-tran-tron-24w.png",
+    image: "images/uploads/2020/01/op-tran-tron-24w.png",
   },
   {
     id: 5,
@@ -58,8 +54,7 @@ const fakeData = [
     salePrice: 650000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/01/den-led-op-tran-24W-vuong-vien-den.jpg",
+    image: "images/uploads/2020/01/den-led-op-tran-24W-vuong-vien-den.jpg",
   },
   {
     id: 6,
@@ -68,8 +63,7 @@ const fakeData = [
     salePrice: 525000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/01/op-tran-tron-24w.png",
+    image: "images/uploads/2020/01/op-tran-tron-24w.png",
   },
 ];
 const ProductTrend = () => {

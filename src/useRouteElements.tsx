@@ -6,6 +6,7 @@ import {
   productDetailRoutes,
   routeAuth,
   routeMain,
+  routeMainAdmin,
   routeUser,
 } from "./routes";
 import CommonLayout from "./layouts/CommonLayout";
@@ -14,6 +15,7 @@ import Loading from "./components/Loading";
 import UserLayout from "./pages/User/layouts/UserLayout";
 import UnAuthenticatedGuard from "./guards/UnAuthenticatedGuard";
 import AuthenticatedGuard from "./guards/AuthenticatedGuard";
+import CommonLayoutAdmin from "./layouts/CommonLayoutAdmin";
 
 export default function useRouteElements() {
   const renderRouter = useMemo(() => {
@@ -94,6 +96,21 @@ export default function useRouteElements() {
       );
     });
   }, [path]);
+  const renderRouterAdmin = useMemo(() => {
+    return routeMainAdmin.map(({ path, Component }, index) => {
+      return (
+        <Route
+          key={index}
+          path={path}
+          element={
+            <Suspense>
+              <Component />
+            </Suspense>
+          }
+        />
+      );
+    });
+  }, [path]);
   const routeElements = (
     <Routes>
       <Route path="" element={<CommonLayout />}>
@@ -101,6 +118,9 @@ export default function useRouteElements() {
       </Route>
       <Route path="/" element={<CommonLayout />}>
         {renderRouterDetail}
+      </Route>
+      <Route path="/admin" element={<CommonLayoutAdmin />}>
+        {renderRouterAdmin}
       </Route>
       <Route path={path.accessory} element={<CommonLayout />}>
         {renderRouterPhuKien}

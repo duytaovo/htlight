@@ -1,8 +1,7 @@
-import Slider from "react-slick";
-import ProductCard from "src/components/ProductCard";
 import Section from "src/components/Section/Section";
-import NextArrow from "src/components/Slick/NextArrow";
-import PrevArrow from "src/components/Slick/PrevArrow";
+import Skeleton from "src/components/Skeleton";
+import { useAppSelector } from "src/hooks/useRedux";
+import ListProduct from "./components/ListProduct";
 interface Product {
   name: string;
   content: string;
@@ -17,8 +16,7 @@ const fakeData = [
     salePrice: 2850000,
     star: 5,
     totalReview: 325,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/04/den-led-panel-600x1200-ht-light-level.jpg",
+    image: "images/uploads/2020/04/den-led-panel-600x1200-ht-light-level.jpg",
   },
   {
     id: 2,
@@ -27,8 +25,7 @@ const fakeData = [
     salePrice: 1500000,
     star: 5,
     totalReview: 1325,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/04/den-led-panel-300x1200-ht-light-level.jpg",
+    image: "images/uploads/2020/04/den-led-panel-300x1200-ht-light-level.jpg",
   },
   {
     id: 3,
@@ -37,8 +34,7 @@ const fakeData = [
     salePrice: 800000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/03/den-led-panel-300x600-ht-light-level.jpg",
+    image: "images/uploads/2020/03/den-led-panel-300x600-ht-light-level.jpg",
   },
   {
     id: 4,
@@ -47,8 +43,7 @@ const fakeData = [
     salePrice: 515000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/02/den-led-panel-300x300-ht-light-level.jpg",
+    image: "images/uploads/2020/02/den-led-panel-300x300-ht-light-level.jpg",
   },
   {
     id: 5,
@@ -57,8 +52,7 @@ const fakeData = [
     salePrice: 650000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/03/den-led-panel-600x600-ht-light-level.jpg",
+    image: "images/uploads/2020/03/den-led-panel-600x600-ht-light-level.jpg",
   },
   {
     id: 5,
@@ -67,34 +61,49 @@ const fakeData = [
     salePrice: 650000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/03/den-led-panel-600x600-ht-light-level.jpg",
+    image: "images/uploads/2020/03/den-led-panel-600x600-ht-light-level.jpg",
   },
 ];
+
 const DenLedPanel = () => {
+  const { value } = useAppSelector((state) => state.loading);
   return (
     <Section title="Đèn Led Panel" styles="bg-yellow-300 ">
       <>
         <div className="w-full  ">
-          <Slider
-            slidesToShow={5}
-            slidesToScroll={1}
-            nextArrow={<NextArrow />}
-            prevArrow={<PrevArrow />}
-          >
-            {fakeData?.map((product: any) => (
-              <div className="w-full" key={""}>
-                <div className="mx-4">
-                  <ProductCard
-                    docquyen
-                    key={product.id}
-                    category="ledAmTranDownLigh"
-                    product={product}
-                  />
-                </div>
+          <div className="mx-4">
+            {value < 100 ? (
+              <div style={{ display: "flex", gap: 20, paddingTop: 32 }}>
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
               </div>
-            ))}
-          </Slider>
+            ) : (
+              <ListProduct fakeData={fakeData} />
+            )}
+          </div>
         </div>
       </>
     </Section>

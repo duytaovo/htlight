@@ -1,18 +1,13 @@
-import http, { httpCategory, httpNew } from "src/utils/http";
+import http, { httpNew } from "src/utils/http";
 
 export const productService = {
-  getProducts(page: string, limit: string) {
-    return http.get(`/products/?_page=${page}&_limit=${limit}`);
-  },
-  getAllProducts() {
-    return http.get(`/product`);
+  getAllProducts({ body, params }: any) {
+    return httpNew.post(`/admin/products`, body, { params: params });
   },
   getProduct(id: string) {
-    return http.get(`/product/${id}`);
+    return httpNew.get(`/products/${id}`);
   },
-  getProductWithPage(pageNumber: string) {
-    return http.get(`/product/${pageNumber}`);
-  },
+
   getProductByName(name: string) {
     return http.get(`/products/${name}`);
   },
@@ -21,15 +16,13 @@ export const productService = {
   },
   getProductByCategoryBrandSex(category: string, brand: string, sex: string) {
     return http.get(
-      `/products/?category=${category}&brand=${brand}&sex=${sex}`
+      `/products/?category=${category}&brand=${brand}&sex=${sex}`,
     );
   },
   getProductByCategorySex(category: string, sex: string) {
     return http.get(`/products/?category=${category}&sex=${sex}`);
   },
-  getProductByCategory(category: string) {
-    return httpCategory.get(`/products/?category=${category}`);
-  },
+
   getProductByPolicy(category: string, brand: string) {
     return http.get(`/products/?category=${category}${brand}`);
   },
@@ -61,9 +54,5 @@ export const productService = {
   getArticle(id: string) {
     return http.get(`/productarticle/?productId=${id}`);
   },
-  // getLaptop(category: string) {
-  //   return axios.get(
-  //     `https://json.msang.repl.co/products?category=${category}`
-  //   );
-  // },
 };
+

@@ -19,11 +19,6 @@ interface Props {
 }
 
 const ProductCard = ({ product, category, docquyen }: Props) => {
-  const handleClickDisable = (e: any) => {
-    e.stopPropagation();
-    e.nativeEvent.stopImmediatePropagation();
-  };
-  const [checked, setChecked] = useState(0);
   return (
     <Link
       to={`${`/${category}/detail`}/${generateNameId({
@@ -47,30 +42,7 @@ const ProductCard = ({ product, category, docquyen }: Props) => {
             )}
           </div>
           <p className={"text-black font-bold text-2xl mt-3"}>{product.name}</p>
-          {/* {category === "dienthoai" || category === "tablet" ? (
-            <div className={styles.cardCompare}>
-              <p></p>
-              {product?.lstProductTypeAndPrice.map((item, index) => (
-                <span
-                  key={index}
-                  className={checked == index ? styles.selecttype : undefined}
-                  onClick={(e) => {
-                    handleClickDisable(e);
-                    setChecked(index);
-                  }}
-                >
-                  {item?.storageCapacity}
-                </span>
-              ))}
-            </div>
-          ) : (
-            <div className={styles.cardCompare}>
-              <span>{"RAM " + product?.lstProductTypeAndPrice[0]?.ram}</span>
-              <span>
-                {"SSD " + product?.lstProductTypeAndPrice[0]?.storageCapacity}
-              </span>
-            </div>
-          )} */}
+
           <strong className={styles.price}>
             <div className="mt-3  items-center">
               <div className="max-w-[70%] truncate text-[#333333] flex items-center ">
@@ -88,16 +60,7 @@ const ProductCard = ({ product, category, docquyen }: Props) => {
               </div>
             </div>
           </strong>
-          {category === "laptop" && (
-            <div className={styles.infoProduct}>
-              {/* {props.parameter.map((object, index) => (
-                                <p key={index}>
-                                    <span>{Object.keys(object)}</span>
-                                    <span>{Object.values(object)}</span>
-                                </p>
-                            ))} */}
-            </div>
-          )}
+
           <p>
             <span className="text-yellow-400 font-bold">
               {product?.star}&ensp;

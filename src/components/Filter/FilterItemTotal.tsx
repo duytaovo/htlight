@@ -5,7 +5,7 @@ import ButtonFilterTotal from "src/components/Button/ButtonFilterTotal";
 import ButtonItem from "src/components/Button/ButtonItem";
 import path from "src/constants/path";
 import { useAppDispatch, useAppSelector } from "src/hooks/useRedux";
-import { handleFilterStore } from "src/store/product/smartPhoneSlice";
+import { handleFilterStore } from "src/store/product/productsSlice";
 
 interface Props {
   data: any;
@@ -22,8 +22,8 @@ const FilterItemTotal = ({ data, handle, scroll }: Props) => {
   const itemHiden: any = useRef<HTMLDivElement>(null);
   const before: any = useRef<HTMLDivElement>(null);
 
-  let filter = useAppSelector((state) => state.smartphone.filter.data); // Lấy tất cả
-  const { smartPhone } = useAppSelector<any>((state) => state.smartphone); // Lấy tất cả
+  let filter = useAppSelector((state) => state.products.filter.data); // Lấy tất cả
+  const { products } = useAppSelector<any>((state) => state.products); // Lấy tất cả
   const dispatch = useAppDispatch();
 
   // Xử lý đóng mở nút
@@ -181,7 +181,7 @@ const FilterItemTotal = ({ data, handle, scroll }: Props) => {
             Bỏ chọn
           </Link>
           <div className={styles.open} onClick={handleFilterLocal}>
-            Xem {smartPhone.data.totalElements} kết quả
+            Xem {products.data.totalElements} kết quả
           </div>
         </div>
       </div>

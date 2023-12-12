@@ -11,22 +11,23 @@ interface Props {
 function Section(
   {
     title,
-    styles = "bg-transparent ",
+    styles = "bg-transparent",
     children,
     rightOption,
-    styleTitle,
+    styleTitle = "bg-mainColor rounded mb-4 ",
   }: Props,
-  ref: any
+  ref: any,
 ) {
   return (
-    <section className={clsx(styles)} ref={ref}>
+    <section className={clsx(styles) + ""} ref={ref}>
       <div className={clsx(title && css.head, styleTitle)}>
         <p>{title}</p>
         {rightOption}
       </div>
-      <div className="flex gap-6 flex-wrap justify-center">{children}</div>
+      <div className="flex gap-6 flex-wrap justify-center ">{children}</div>
     </section>
   );
 }
 
 export default forwardRef(Section);
+

@@ -38,5 +38,11 @@ const path = {
   search: "/search",
 } as const;
 
+export const pathAdmin = {
+  home: "/admin/home",
+  products: "/admin/products/led",
+  new_products: "/admin/products/led/new",
+};
+
 export default path;
 

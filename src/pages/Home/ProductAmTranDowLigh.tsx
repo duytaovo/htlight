@@ -1,8 +1,7 @@
-import Slider from "react-slick";
-import ProductCard from "src/components/ProductCard";
 import Section from "src/components/Section/Section";
-import NextArrow from "src/components/Slick/NextArrow";
-import PrevArrow from "src/components/Slick/PrevArrow";
+import Skeleton from "src/components/Skeleton";
+import { useAppSelector } from "src/hooks/useRedux";
+import ListProduct from "./components/ListProduct";
 interface Product {
   name: string;
   content: string;
@@ -17,8 +16,7 @@ const fakeData = [
     salePrice: 344000,
     star: 5,
     totalReview: 325,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2023/08/snapedit_1700298411199.png",
+    image: "images/uploads/2023/08/snapedit_1700298411199.png",
   },
   {
     id: 2,
@@ -27,8 +25,7 @@ const fakeData = [
     salePrice: 900000,
     star: 5,
     totalReview: 1325,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2019/12/den-led-am-tran-sieu-mong-vuong-9.jpg",
+    image: "images/uploads/2019/12/den-led-am-tran-sieu-mong-vuong-9.jpg",
   },
   {
     id: 3,
@@ -37,8 +34,7 @@ const fakeData = [
     salePrice: 425000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2019/12/den-led-am-tran-sieu-mong-vuong-8.jpg",
+    image: "images/uploads/2019/12/den-led-am-tran-sieu-mong-vuong-8.jpg",
   },
   {
     id: 4,
@@ -47,8 +43,7 @@ const fakeData = [
     salePrice: 525000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2019/12/den-led-am-tran-sieu-mong-vuong-7.jpg",
+    image: "images/uploads/2019/12/den-led-am-tran-sieu-mong-vuong-7.jpg",
   },
   {
     id: 6,
@@ -57,8 +52,7 @@ const fakeData = [
     salePrice: 650000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2019/12/den-led-am-tran-sieu-mong-tron-13.jpg",
+    image: "images/uploads/2019/12/den-led-am-tran-sieu-mong-tron-13.jpg",
   },
   {
     id: 6,
@@ -67,34 +61,49 @@ const fakeData = [
     salePrice: 525000,
     star: 5,
     totalReview: 355,
-    image:
-      "https://htlightlevel.vn/wp-content/uploads/2020/01/op-tran-tron-24w.png",
+    image: "images/uploads/2020/01/op-tran-tron-24w.png",
   },
 ];
+
 const ProductAmTranDowLigh = () => {
+  const { value } = useAppSelector((state) => state.loading);
   return (
     <Section title="Đèn Led Âm Trần " styles="bg-blue-300 ">
       <>
         <div className="w-full  ">
-          <Slider
-            slidesToShow={5}
-            slidesToScroll={1}
-            nextArrow={<NextArrow />}
-            prevArrow={<PrevArrow />}
-          >
-            {fakeData?.map((product: any) => (
-              <div className="w-full" key={""}>
-                <div className="mx-4">
-                  <ProductCard
-                    docquyen
-                    key={product.id}
-                    category="ledAmTranDownLigh"
-                    product={product}
-                  />
-                </div>
+          <div className="mx-4">
+            {value < 100 ? (
+              <div style={{ display: "flex", gap: 20, paddingTop: 32 }}>
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
+                <Skeleton
+                  styles={{ height: "35vh" }}
+                  children={undefined}
+                  className={undefined}
+                />
               </div>
-            ))}
-          </Slider>
+            ) : (
+              <ListProduct fakeData={fakeData} />
+            )}
+          </div>
         </div>
       </>
     </Section>

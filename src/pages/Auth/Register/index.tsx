@@ -13,8 +13,8 @@ import { login, registerUser } from "src/store/user/userSlice";
 import { isAxiosUnprocessableEntityError } from "src/utils/utils";
 import { setAccessTokenToLS, setRefreshTokenToLS } from "src/utils/auth";
 import { Helmet } from "react-helmet-async";
-// import logo from "./logo-main.png";
-import logo from "src/assets/images/logotechstore.jpg";
+
+import logo from "src/assets/images/HT MAX LIGHT.png";
 
 import Button from "../Button";
 import SelectCustom from "src/components/Select";

@@ -13,6 +13,8 @@ import ProductOpTran from "./PromoDenLedOpTran";
 import DenLedPanel from "./DenLedPanel";
 import DenLedTuyp from "./DenLedTuyp";
 import DenDuongLed from "./DenDuongLed";
+import { changePercentLoading } from "src/app.slice";
+import { unwrapResult } from "@reduxjs/toolkit";
 
 const Home = ({ title }: { title: string }) => {
   const [displayTicket, setDisplayTicket] = useState<boolean>(false);
@@ -32,8 +34,16 @@ const Home = ({ title }: { title: string }) => {
   }, []);
 
   useEffect(() => {
-    dispatch(getPromo(""));
-  }, []);
+    const getData = async () => {
+      dispatch(changePercentLoading(30));
+      dispatch(changePercentLoading(70));
+      const res = await dispatch(getPromo(""));
+      unwrapResult(res);
+
+      setTimeout(() => dispatch(changePercentLoading(100)), 500);
+    };
+    getData();
+  }, [dispatch]);
 
   return (
     <div>
